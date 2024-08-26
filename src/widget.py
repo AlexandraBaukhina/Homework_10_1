@@ -41,6 +41,7 @@ def mask_account_card(card_type_and_number: str) -> str:
 
 
 def get_date(full_date: str) -> str:
+    ''' Функция принимает на вход строку с датой в формате "2024-03-11T02:26:18.671407"
+    и возвращает строку с датой в формате "ДД.ММ.ГГГГ"'''
     date = full_date[:10]
     return f'{date[-2:]}.{date[5:7]}.{date[:4]}'
-
