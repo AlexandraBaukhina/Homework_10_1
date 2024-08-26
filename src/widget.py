@@ -38,3 +38,9 @@ def mask_account_card(card_type_and_number: str) -> str:
         joined_card_type = ' '.join(card_type)
 
         return f'{joined_card_type} {masked_number}'
+
+
+def get_date(full_date: str) -> str:
+    date = full_date[:10]
+    return f'{date[-2:]}.{date[5:7]}.{date[:4]}'
+
