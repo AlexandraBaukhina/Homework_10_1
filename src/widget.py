@@ -1,6 +1,8 @@
+import re
+
+
 def mask_account_card(card_type_and_number: str) -> str:
     ''' Функция принимает на вход номер карты или счета и возвращает строку с замаскированным номером'''
-    import re
 
     # Поиск слов и чисел
     card_type = re.findall(r'[A-Za-zА-Яа-я]+', card_type_and_number)
