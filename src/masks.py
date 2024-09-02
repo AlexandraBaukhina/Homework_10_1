@@ -1,13 +1,11 @@
 def get_mask_card_number(card_number: str) -> str:
-    ''' Функция принимает на вход номер карты и возвращает ее маску
-    :rtype: object
-    '''
+    ''' Функция принимает на вход номер карты и возвращает ее маску'''
     # Проверим, что длина номера карты правильная
     if len(card_number) != 16:
         raise ValueError("Номер карты должен содержать 16 цифр")
 
     # Разделяем номер карты на блоки по 4 цифры
-    blocks = [card_number[i : i + 4] for i in range(0, 16, 4)]
+    blocks = [card_number[i: i + 4] for i in range(0, 16, 4)]
 
     # Формируем маску
     masked_blocks = [

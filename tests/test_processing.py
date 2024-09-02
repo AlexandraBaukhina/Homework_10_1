@@ -1,6 +1,4 @@
-import pytest
 from src.processing import filter_by_state, sort_by_date
-
 
 
 def test_filter(list_of_dict_for_test, filtering, bla_filtering, list_of_dict_state):
