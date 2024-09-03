@@ -8,6 +8,9 @@ def mask_account_card(card_type_and_number: str) -> str:
     card_type = re.findall(r'[A-Za-zА-Яа-я]+', card_type_and_number)
     number = re.findall(r'\d+', card_type_and_number)
 
+    if len(card_type_and_number) < 16:
+        raise ValueError("Номер карты или счета должен содержать от 16 цифр")
+
     # Проверим по длине номера карта или счет
     for num in number:
         if len(num) == 16:
@@ -39,7 +42,10 @@ def mask_account_card(card_type_and_number: str) -> str:
 
         joined_card_type = ' '.join(card_type)
 
-        return f'{joined_card_type} {masked_number}'
+        if len(card_type) != 0:
+            return f'{joined_card_type} {masked_number}'
+
+        return f'{masked_number}'
 
 
 def get_date(full_date: str) -> str:

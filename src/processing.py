@@ -10,8 +10,8 @@ state соответствует указанному значению.'''
     for dictionary in list_of_dict:
         if dictionary['state'] == state:
             filtered_list.append(dictionary)
-        else:
-            raise ValueError('Нет такого статуса')
+    if len(filtered_list) == 0:
+        raise ValueError('Нет такого статуса')
     return filtered_list
 
 
