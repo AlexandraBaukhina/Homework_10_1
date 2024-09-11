@@ -110,31 +110,31 @@ def bla_sorting():
 @pytest.fixture
 def currency_test_list():
     return [
-    {
-        "id": 1,
-        "operationAmount": {
-            "currency": {"name": "USD", "code": "USD"}
+        {
+            "id": 1,
+            "operationAmount": {
+                "currency": {"name": "USD", "code": "USD"}
+            }
+        },
+        {
+            "id": 2,
+            "operationAmount": {
+                "currency": {"name": "EUR", "code": "EUR"}
+            }
         }
-    },
-    {
-        "id": 2,
-        "operationAmount": {
-            "currency": {"name": "EUR", "code": "EUR"}
-        }
-    }
-]
+    ]
 
 
 @pytest.fixture
 def currency_done_test_list():
     return [
-    {
-        "id": 1,
-        "operationAmount": {
-            "currency": {"name": "USD", "code": "USD"}
+        {
+            "id": 1,
+            "operationAmount": {
+                "currency": {"name": "USD", "code": "USD"}
+            }
         }
-    }
-]
+    ]
 
 
 @pytest.fixture

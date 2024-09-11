@@ -9,7 +9,8 @@ def filter_by_currency(transactions: List[Dict[Any, Any]], currency_name: str) -
         raise ValueError('Введите транзакцию')
 
     filtered_transactions = [transaction for transaction in transactions
-                             if transaction.get('operationAmount', {}).get('currency', {}).get('name') == currency_name]
+                             if transaction.get('operationAmount', {}).get('currency', {}).get('name') == currency_name
+                             ]
 
     if not filtered_transactions:
         raise ValueError('Нет такой транзакции')
@@ -32,6 +33,7 @@ def transaction_descriptions(transactions: List[Dict[Any, Any]]) -> Iterator[str
             yield description
         else:
             raise ValueError('Некоторые транзакции не содержат описания')
+
 
 def card_number_generator(start: int, end: int) -> Iterator[str]:
     """Функция-генератор генерирует номера банковских карт в заданном диапазоне.
