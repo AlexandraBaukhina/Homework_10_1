@@ -1,5 +1,8 @@
 import pytest
+
+import src
 from decorators import log
+
 
 # Функции для тестирования
 @log()
