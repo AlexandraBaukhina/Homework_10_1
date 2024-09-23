@@ -1,10 +1,15 @@
+import re
+
+
 def mask_account_card(card_type_and_number: str) -> str:
     ''' Функция принимает на вход номер карты или счета и возвращает строку с замаскированным номером'''
-    import re
 
     # Поиск слов и чисел
     card_type = re.findall(r'[A-Za-zА-Яа-я]+', card_type_and_number)
     number = re.findall(r'\d+', card_type_and_number)
+
+    if len(card_type_and_number) < 16:
+        raise ValueError("Номер карты или счета должен содержать от 16 цифр")
 
     # Проверим по длине номера карта или счет
     for num in number:
@@ -37,11 +42,17 @@ def mask_account_card(card_type_and_number: str) -> str:
 
         joined_card_type = ' '.join(card_type)
 
-        return f'{joined_card_type} {masked_number}'
+        if len(card_type) != 0:
+            return f'{joined_card_type} {masked_number}'
+
+        return f'{masked_number}'
 
 
 def get_date(full_date: str) -> str:
     ''' Функция принимает на вход строку с датой в формате "2024-03-11T02:26:18.671407"
     и возвращает строку с датой в формате "ДД.ММ.ГГГГ"'''
-    date = full_date[:10]
-    return f'{date[-2:]}.{date[5:7]}.{date[:4]}'
+    if len(full_date) <= 10:
+        raise ValueError('Введите дату в формате "ГГГГ-ММ-ДДT02:26:18.671407')
+    else:
+        date = full_date[:10]
+        return f'{date[-2:]}.{date[5:7]}.{date[:4]}'

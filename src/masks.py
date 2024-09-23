@@ -5,7 +5,7 @@ def get_mask_card_number(card_number: str) -> str:
         raise ValueError("Номер карты должен содержать 16 цифр")
 
     # Разделяем номер карты на блоки по 4 цифры
-    blocks = [card_number[i : i + 4] for i in range(0, 16, 4)]
+    blocks = [card_number[i: i + 4] for i in range(0, 16, 4)]
 
     # Формируем маску
     masked_blocks = [
@@ -23,6 +23,10 @@ def get_mask_card_number(card_number: str) -> str:
 
 def get_mask_account(account_number: str) -> str:
     ''' Функция принимает на вход номер счета и возвращает его маску'''
+    # Проверим, что длина номера счета правильная
+    if len(account_number) != 18:
+        raise ValueError("Номер счета должен содержать 18 цифр")
+
     # Оставляем последние шесть символов номера счета
     acc_num = account_number[-6:]
 
