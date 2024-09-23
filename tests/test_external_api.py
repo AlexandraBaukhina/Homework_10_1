@@ -1,8 +1,7 @@
-import os
 import unittest
-from unittest.mock import patch, Mock
+from unittest.mock import Mock, patch
 
-from src.external_api import get_exchange_rate, convert_currency
+from src.external_api import convert_currency, get_exchange_rate
 
 
 class TestExternalAPI(unittest.TestCase):

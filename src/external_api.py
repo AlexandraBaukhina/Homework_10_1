@@ -1,5 +1,7 @@
 import os
+
 import requests
+
 
 def get_exchange_rate(base_currency, target_currency):
     api_access_key = os.getenv("API_ACCESS_KEY")
@@ -8,6 +10,7 @@ def get_exchange_rate(base_currency, target_currency):
     data = response.json()
     rate = data["rates"][target_currency]
     return rate
+
 
 def convert_currency(amount, base_currency, target_currency):
     rate = get_exchange_rate(base_currency, target_currency)

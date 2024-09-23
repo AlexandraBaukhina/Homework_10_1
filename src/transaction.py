@@ -1,4 +1,3 @@
-import os
 from external_api import convert_currency
 
 
