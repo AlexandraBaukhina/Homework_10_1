@@ -1,6 +1,7 @@
 import json
 import logging
 
+
 logger = logging.getLogger('utils')
 logger.setLevel(logging.INFO)
 file_handler = logging.FileHandler('logs/utils.log')
@@ -24,3 +25,4 @@ def read_transactions_from_json(file_path):
     except json.JSONDecodeError as e:
         logger.error(f'Произошла ошибка: {e}')
         return []
+
