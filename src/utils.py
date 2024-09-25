@@ -25,4 +25,3 @@ def read_transactions_from_json(file_path):
     except json.JSONDecodeError as e:
         logger.error(f'Произошла ошибка: {e}')
         return []
-
