@@ -17,20 +17,20 @@ def test_filter_by_currency(currency_test_list, currency_done_test_list, currenc
 
 @pytest.mark.parametrize('transactions, expected_output, should_raise', [
     ([
-        {'description': 'Перевод организации'},
-        {'description': 'Покупка в магазине'},
-        {'description': 'Снятие наличных'}
-    ], [
-        'Перевод организации',
-        'Покупка в магазине',
-        'Снятие наличных'
-    ], False),
+         {'description': 'Перевод организации'},
+         {'description': 'Покупка в магазине'},
+         {'description': 'Снятие наличных'}
+     ], [
+         'Перевод организации',
+         'Покупка в магазине',
+         'Снятие наличных'
+     ], False),
 
     ([
-        {'description': 'Перевод организации'},
-        {'description': ''},
-        {'description': 'Снятие наличных'}
-    ], None, True),
+         {'description': 'Перевод организации'},
+         {'description': ''},
+         {'description': 'Снятие наличных'}
+     ], None, True),
 
     ([], None, True)
 ])
