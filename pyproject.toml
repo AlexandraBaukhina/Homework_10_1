@@ -31,7 +31,7 @@ build-backend = "poetry.core.masonry.api"
 [tool.black]
 # максимальная длина строки
 line-length = 119
-exclude =['.git']
+exclude = ['.git']
 
 
 [tool.isort]
